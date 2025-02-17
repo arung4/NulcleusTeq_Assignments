@@ -1,0 +1,1 @@
+"Machile Learning is a brach of ariticial intelligence that enables computers to learn from data and make predictions or decisions without being explicitly programmed." 
