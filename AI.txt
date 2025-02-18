@@ -5,3 +5,11 @@ AI is a broad field that encompasses many different disciplines, including compu
 On an operational level for business use, AI is a set of technologies that are based primarily on machine learning and deep learning, used for data analytics, predictions and forecasting, object categorization, natural language processing, recommendations, intelligent data retrieval, and more.
 
 
+How does AI work?
+While the specifics vary across different AI techniques, the core principle revolves around data. AI systems learn and improve through exposure to vast amounts of data, identifying patterns and relationships that humans may miss.
+
+This learning process often involves algorithms, which are sets of rules or instructions that guide the AI's analysis and decision-making. In machine learning, a popular subset of AI, algorithms are trained on labeled or unlabeled data to make predictions or categorize information. 
+
+Deep learning, a further specialization, utilizes artificial neural networks with multiple layers to process information, mimicking the structure and function of the human brain. Through continuous learning and adaptation, AI systems become increasingly adept at performing specific tasks, from recognizing images to translating languages and beyond.
+
+Want to learn how to get started with AI? Take the free beginner's introduction to generative AI.
