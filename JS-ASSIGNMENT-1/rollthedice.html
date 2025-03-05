@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two-Player Dice Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎲 Two-Player Dice Game 🎲</h1>
+    <div class="players">
+      <div class="player active" id="player1">
+        <h2>Player 1</h2>
+        <input type="text" id="player1Name" placeholder="Player 1 Name">
+        <p>Saved Score: <span id="player1SavedScore">0</span></p>
+        <p>Current Score: <span id="player1CurrentScore">0</span></p>
+      </div>
+      <div class="player" id="player2">
+        <h2>Player 2</h2>
+        <input type="text" id="player2Name" placeholder="Player 2 Name">
+        <p>Saved Score: <span id="player2SavedScore">0</span></p>
+        <p>Current Score: <span id="player2CurrentScore">0</span></p>
+      </div>
+    </div>
+    <div class="dice-section">
+      <div class="dice" id="dice">
+        <img src="dice-1.png" alt="Dice" id="diceImage">
+      </div>
+      <div class="buttons">
+        <button id="rollBtn">🎲 Roll Dice</button>
+        <button id="saveBtn">💾 Save Score</button>
+        <button id="resetBtn">🔄 Reset Game</button>
+      </div>
+    </div>
+    <div id="winnerMessage"></div>
+  </div>
+  <audio id="diceSound" src="dice-roll-sound.mp3"></audio>
+  <audio id="buttonSound" src="button-click-sound.mp3"></audio>
+  <audio id="turnSound" src="turn-shift-sound.mp3"></audio>
+  <script src="script.js"></script>
+</body>
+</html>

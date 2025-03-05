@@ -1,0 +1,145 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #333;
+}
+
+.container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #ff6f61;
+}
+
+.players {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  gap:20px;
+}
+
+.player {
+  padding: 20px;
+  border: 3px solid #ccc;
+  border-radius: 10px;
+  width: 45%;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.player.active {
+  border-color: #ff6f61;
+  box-shadow: 0 0 15px rgba(255, 111, 97, 0.5);
+  transform: scale(1.05);
+}
+
+.player h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ff6f61;
+}
+
+input {
+  padding: 5px;
+  font-size: 1rem;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.dice-section {
+  margin-top: 20px;
+}
+
+.dice {
+  margin-bottom: 20px;
+}
+
+#diceImage {
+  width: 100px;
+  height: 100px;
+  animation: rollDice 1s ease-out;
+}
+
+@keyframes rollDice {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: #ff6f61;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #ff3b2f;
+  transform: scale(1.1);
+}
+
+#winnerMessage {
+  margin-top: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #28a745;
+  animation: celebrate 2s infinite;
+}
+
+@keyframes celebrate {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.dice.rolling {
+  animation: spin 0.5s linear infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .players {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .player {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+
