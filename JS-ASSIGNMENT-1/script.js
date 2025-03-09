@@ -9,21 +9,22 @@ const diceImage = document.getElementById("diceImage");
 const rollBtn = document.getElementById("rollBtn");
 const saveBtn = document.getElementById("saveBtn");
 const resetBtn = document.getElementById("resetBtn");
-const winnerMessage = document.getElementById("winnerMessage");
+const winnerMessage = document.getElementById("winner-Message");
 
 // Sound Elements
 const diceSound = document.getElementById("diceSound");
 const buttonSound = document.getElementById("buttonSound");
 const turnSound = document.getElementById("turnSound");
+const winSound = document.getElementById("winSound");
 
-// Game Variables
+//  Variables
 let currentPlayer = 1;
 let player1TotalScore = 0;
 let player2TotalScore = 0;
 let currentScore = 0;
 let gameActive = true;
 
-// Dice Images
+// Dice Faces Images
 const diceImages = [
   "dice-1.png",
   "dice-2.png",
@@ -114,6 +115,7 @@ function highlightCurrentPlayer() {
 }
 
 function checkWin() {
+  winSound.play();
   if (player1TotalScore >= 100) {
     winnerMessage.textContent = `${player1NameInput.value || "Player 1"} Wins! 🎉`;
     gameActive = false;

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game in JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Start Screen  -->
+
+    <div class="start-screen">
+        <h1>Quiz Game</h1>
+        <label for="category">Select Category</label>
+
+         <!-- category -->
+        <select name="" id="category" >
+            <option value="9">General Knowledge</option>
+            <option value="10">Books</option>
+            <option value="11">Films</option>
+            <option value="21">Sports</option>
+            <option value="17">Science & Nature</option>
+            <option value="18">Computers</option
+            <option value="22">Sports Teams</option>
+            <option value="23">Geography</option>
+            <option value="12">Music</option>
+            <option value="23">History</option>
+        </select>
+
+        <!-- level  -->
+        <label for="level">Select Level</label>
+        <select name="" id="level">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+        <button id="start-quiz">Start Quiz</button>
+    </div>
+
+
+    <!-- Quiz Screen  -->
+     <div class="quiz-screen hidden ">
+        <h2>Question No: <span class="question-no">1</span></h2>
+        <h2 id="question">Who is the father of cell Phone? </h2>
+        <ul id="options">
+            <li class="option">A: <span>Option 1</span></li>
+            <li class="option">B: <span>Option 2</span></li>
+            <li class="option">C: <span>Option 3</span></li>
+            <li class="option">D: <span>Option 4</span></li>
+        </ul>
+        <div class="timer">Time left: <span>15s</span></div>
+     </div>
+
+    <!-- Feedback Screen -->
+    <div class="feedback-screen hidden">
+        <h2 id="result-msg">Correct</h2>
+        <p id="correct-answer">Option A</p>
+        <button id="next-question">Next Question</button>
+    </div>
+
+    <!-- End Screen  -->
+    <div class="result-screen hidden">
+        <h2>Quiz Result</h2>
+        <p>Correct Answers: <span id="correct-answers-no">2</span></p>
+        <p>Wrong Answers: <span id="wrong-answers-no">2</span></p>
+        <p>Final Scorer: <span id="final-score">5</span></p>
+        <button id="restart-quiz">Restart Quiz</button>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
