@@ -27,10 +27,14 @@ const noofWrongAnswers = document.getElementById("wrong-answers-no");
 const finalScore = document.getElementById("final-score");
 const restartQuizButton = document.getElementById("restart-quiz");
 
+const btnClickSound = document.getElementById("btn-click-sound");
+const quizGameSound = document.getElementById("quiz-game-sound");
+
 // Event listeners
 startQuizButton.addEventListener("click", startQuiz);
 nextQuestionButton.addEventListener("click", nextQuestion);
 restartQuizButton.addEventListener("click", restartQuiz);
+
 
 // Game Variables and Constants
 let currentQuestionIndex = 0;
@@ -39,8 +43,18 @@ let timer;
 let questions = [];
 let score = 0;
 
+
+
 // Function to start the quiz
 function startQuiz() {
+  btnClickSound.play();
+  try {
+    quizGameSound.play();
+  } catch (error) {
+    console.warn("Autoplay failed:", error);
+  }
+
+
   const category = categoryDropdown.value;
   const level = levelDropdown.value;
 
@@ -83,7 +97,7 @@ function loadNextQuestion(){
 async function fetchQuestions(category, level) {
   try {
     const response = await fetch(
-      `https://opentdb.com/api.php?amount=5&category=${category}&difficulty=${level}&type=multiple`
+      `https://opentdb.com/api.php?amount=20&category=${category}&difficulty=${level}&type=multiple`
     );
     const data = await response.json();
     console.log(data);
@@ -122,9 +136,14 @@ function loadQuestion(question) {
     const li = document.createElement("li");
     li.className = "option";
     li.innerHTML = `${String.fromCharCode(65 + index)}: <span>${option}</span>`;
-    li.addEventListener("click", () =>
+    li.addEventListener("click", () => {
+      // Stop and reset the audio before playing
+      btnClickSound.pause();
+      btnClickSound.currentTime = 0;
+
+      btnClickSound.play();  
       checkAnswer(option, question.correct_answer)
-    );
+  })
     optionsElement.appendChild(li);
   });
   quizScreen.classList.remove("hidden");
@@ -171,6 +190,7 @@ function checkAnswer(userAnswer, correctAnswer) {
 // Function to end the quize and show the result screen
 function endQuiz() {
   // set the final result variables
+  quizGameSound.pause();
   noofCorrectAnswers.textContent = score;
   noofWrongAnswers.textContent = questions.length - score;
   finalScore.textContent = score * 10;
@@ -182,6 +202,8 @@ function endQuiz() {
 
 // Function to restart the quiz
 function restartQuiz() {
+  btnClickSound.play();
+  quizGameSound.play();
   // Hide the result screen and show the start screen
   resultScreen.classList.add("hidden");
   startScreen.classList.remove("hidden");
