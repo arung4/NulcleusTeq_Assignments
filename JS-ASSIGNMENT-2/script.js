@@ -33,7 +33,7 @@ nextQuestionButton.addEventListener("click", nextQuestion);
 restartQuizButton.addEventListener("click", restartQuiz);
 
 // Game Variables and Constants
-let cureentQuestionIndex = 0;
+let currentQuestionIndex = 0;
 let timerleft = 15;
 let timer;
 let questions = [];
@@ -44,13 +44,13 @@ function startQuiz() {
   const category = categoryDropdown.value;
   const level = levelDropdown.value;
 
+    startScreen.classList.add("hidden");
    // Fetch the questions based on category and level
    if(fetchQuestions(category, level)) {
-        // Hide the start screen and show the quize screen
-  startScreen.classList.add("hidden");
-  quizScreen.classList.remove("hidden");
+      // Hide the start screen and show the quize screen
    }else{
     alert("Questions not loaded , due to problem in API ");
+    startScreen.classList.remove("hidden");
    }
        
 }
@@ -69,9 +69,9 @@ function nextQuestion() {
 function loadNextQuestion(){
   timerleft = 15;
   clearInterval(timer);
-  cureentQuestionIndex++;
-  if(cureentQuestionIndex < questions.length){
-    loadQuestion(questions[cureentQuestionIndex]);
+  currentQuestionIndex++;
+  if(currentQuestionIndex < questions.length){
+    loadQuestion(questions[currentQuestionIndex]);
   } else {
     endQuiz();
   }
@@ -90,7 +90,7 @@ async function fetchQuestions(category, level) {
     // put all 20 questions in the questions array
      questions = data.results;
     if(questions){
-      const status = loadQuestion(questions[cureentQuestionIndex]);
+      const status = loadQuestion(questions[currentQuestionIndex]);
       if(status) return true;
     } else {
       alert("No questions found for the selected category and level");
@@ -108,7 +108,7 @@ async function fetchQuestions(category, level) {
 // Function to load a question
 
 function loadQuestion(question) {
-  questionNoElement.textContent = cureentQuestionIndex + 1;
+  questionNoElement.textContent = currentQuestionIndex + 1;
   questionElement.textContent = question.question;
 
   // clear the previous question
@@ -117,7 +117,7 @@ function loadQuestion(question) {
   // Add new options
   const options = [...question.incorrect_answers, question.correct_answer];
   options.sort(() => Math.random() - 0.5);
-  console.log("Options", options);
+  // console.log("Options", options);
   options.forEach((option, index) => {
     const li = document.createElement("li");
     li.className = "option";
@@ -127,6 +127,7 @@ function loadQuestion(question) {
     );
     optionsElement.appendChild(li);
   });
+  quizScreen.classList.remove("hidden");
   startTimer();
   return true;
 }
@@ -143,7 +144,7 @@ function startTimer() {
 
     if (timerleft === 0) {
       clearInterval(timer);
-      checkAnswer("", questions[cureentQuestionIndex].correct_answer);
+      checkAnswer("", questions[currentQuestionIndex].correct_answer);
     }
   }, 1000);
 }
@@ -153,8 +154,8 @@ function checkAnswer(userAnswer, correctAnswer) {
    clearInterval(timer);
   if (userAnswer === correctAnswer) {
     score++;
-    console.log("Your score is",
-    score);
+    // console.log("Your score is",
+    // score);
     resultMsgElement.textContent = "Correct Answer! 😊";
   } else {
     resultMsgElement.textContent = "Wrong Answer! 😒🤣";
