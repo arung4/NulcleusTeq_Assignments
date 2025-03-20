@@ -1,36 +1,78 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 40px;
-  }
-  
-  h1 {
-    color: #4CAF50;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-  }
-  
-  label {
-    margin-top: 10px;
-  }
-  
-  input, button {
-    margin-top: 5px;
-    padding: 10px;
-    font-size: 16px;
-  }
-  
-  button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
+  font-family: 'Poppins', sans-serif;
+  margin: 40px;
+  background-color: #f0f4f8;
+}
+
+h1 {
+  color: #6c5ce7;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input, button {
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #6c5ce7;
+  box-shadow: 0 0 8px rgba(108, 92, 231, 0.3);
+  outline: none;
+}
+
+button {
+  background-color: #6c5ce7;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #4834d4;
+  transform: translateY(-2px);
+}
+
+.back-btn-container{
+  text-align: center;
+  margin-top: 10px;
+}
+
+a {
+  display: inline-block;
+  margin-top: 20px;
+  text-align: center;
+  color: #6c5ce7;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#message {
+  margin-top: 10px;
+  color: #4CAF50;
+  text-align: center;
+}

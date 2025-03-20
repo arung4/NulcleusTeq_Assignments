@@ -21,8 +21,8 @@ async function fetchEmployees(){
         <td>${employee.department} </td>
         <td>${employee.salary} </td>
         <td>
-        <button class = "action-btn" onClick={editEmployee(${employee.id})}>Edit</button>
-        <button class = "action-btn" onClick={deleteEmployee(${employee.id})}>Delete</button>
+        <button class = "action-btn edit-btn" onClick={editEmployee(${employee.id})}>Edit</button>
+        <button class = "action-btn delete-btn" onClick={deleteEmployee(${employee.id})}>Delete</button>
         </td>
         `;
         tableBody.appendChild(row);
