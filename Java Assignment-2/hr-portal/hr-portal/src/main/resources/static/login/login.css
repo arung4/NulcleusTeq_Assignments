@@ -27,6 +27,9 @@ h1 {
   margin-bottom: 20px;
   font-size: 24px;
 }
+.input-group{
+  text-align: left;
+}
 
 input[type="email"],
 input[type="password"],
@@ -40,12 +43,7 @@ button {
   transition: all 0.3s ease;
 }
 
-input[type="email"]:focus,
-input[type="password"]:focus {
-  border-color: #6c5ce7;
-  box-shadow: 0 0 8px rgba(108, 92, 231, 0.3);
-  outline: none;
-}
+
 
 button {
   background-color: #6c5ce7;

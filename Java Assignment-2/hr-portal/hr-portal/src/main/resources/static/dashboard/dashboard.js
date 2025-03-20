@@ -63,3 +63,12 @@ async function deleteEmployee(employeeId){
     }
   
 }
+
+// logout button document.getElementById('logoutButton').addEventListener('click', function () {
+    document.getElementById('logoutButton').addEventListener('click', function () {
+        const confirmLogout = confirm('Are you sure you want to logout?');
+        if (confirmLogout) {
+          window.location.href = '../login/login.html';
+        }
+      });
+      

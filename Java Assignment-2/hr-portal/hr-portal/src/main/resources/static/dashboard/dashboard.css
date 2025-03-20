@@ -31,6 +31,24 @@ h1 {
   transition: all 0.3s ease;
 }
 
+#logoutButton {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #6c5ce7;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+#logoutButton:hover{
+  background-color: #4834d4;
+  transform: translateY(-2px);
+}
+
 .add-employee-btn:hover {
   background-color: #4834d4;
   transform: translateY(-2px);
