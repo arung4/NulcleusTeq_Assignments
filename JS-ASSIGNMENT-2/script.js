@@ -28,7 +28,7 @@ const finalScore = document.getElementById("final-score");
 const restartQuizButton = document.getElementById("restart-quiz");
 
 const btnClickSound = document.getElementById("btn-click-sound");
-const quizGameSound = document.getElementById("quiz-game-sound");
+
 
 // Event listeners
 startQuizButton.addEventListener("click", startQuiz);
@@ -48,12 +48,7 @@ let score = 0;
 // Function to start the quiz
 function startQuiz() {
   btnClickSound.play();
-  try {
-    quizGameSound.play();
-  } catch (error) {
-    console.warn("Autoplay failed:", error);
-  }
-
+ 
 
   const category = categoryDropdown.value;
   const level = levelDropdown.value;
@@ -190,12 +185,12 @@ function checkAnswer(userAnswer, correctAnswer) {
 // Function to end the quize and show the result screen
 function endQuiz() {
   // set the final result variables
-  quizGameSound.pause();
   noofCorrectAnswers.textContent = score;
   noofWrongAnswers.textContent = questions.length - score;
   finalScore.textContent = score * 10;
 
   // Hide the feedback screen and show the result screen
+  quizScreen.classList.add("hidden");
   feedbackScreen.classList.add("hidden");
   resultScreen.classList.remove("hidden");
 }
@@ -203,7 +198,6 @@ function endQuiz() {
 // Function to restart the quiz
 function restartQuiz() {
   btnClickSound.play();
-  quizGameSound.play();
   // Hide the result screen and show the start screen
   resultScreen.classList.add("hidden");
   startScreen.classList.remove("hidden");
