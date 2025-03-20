@@ -25,6 +25,12 @@ public class EmployeeController {
     public Employee addEmployee(@RequestBody Employee employee) {
         return employeeService.addEmployee(employee);
     }
+   
+   // ✅ Get Employee by 
+   @GetMapping("/{id}")
+   public Employee getEmployeeById(@PathVariable Long id) {
+        return employeeService.getEmployeeById(id);
+    }
 
     // ✅ Update Employee
     @PutMapping("/{id}")

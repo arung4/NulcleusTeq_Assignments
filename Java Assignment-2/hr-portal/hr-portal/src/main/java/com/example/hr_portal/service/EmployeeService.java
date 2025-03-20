@@ -17,12 +17,18 @@ public class EmployeeService {
         return employeeRepository.findAll();
     }
 
+    public Employee getEmployeeById(Long id) {
+        return employeeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Employee not found with ID: " + id));
+    }
+
     public Employee addEmployee(Employee employee) {
         return employeeRepository.save(employee);
     }
 
     public Employee updateEmployee(Long id, Employee employeeDetails) {
-        Employee employee = employeeRepository.findById(id).orElseThrow(() -> new RuntimeException("Employee not found"));
+        Employee employee = employeeRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Employee not found"));
         employee.setName(employeeDetails.getName());
         employee.setDepartment(employeeDetails.getDepartment());
         employee.setEmail(employeeDetails.getEmail());

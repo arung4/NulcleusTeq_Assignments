@@ -36,7 +36,7 @@ async function fetchEmployees(){
 // Edit employee
 
 function editEmployee(employeeId){
-    window.location.href = `edit-employee.html?id=${employeeId}`;
+    window.location.href = `editpage/edit-employee.html?id=${employeeId}`;
 }
 
 // Delete employee
