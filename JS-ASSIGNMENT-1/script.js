@@ -13,7 +13,6 @@ const winnerMessage = document.getElementById("winner-Message");
 
 // Sound Elements
 const diceSound = document.getElementById("diceSound");
-const buttonSound = document.getElementById("buttonSound");
 const turnSound = document.getElementById("turnSound");
 const winSound = document.getElementById("winSound");
 
@@ -26,12 +25,12 @@ let gameActive = true;
 
 // Dice Faces Images
 const diceImages = [
-  "dice-1.png",
-  "dice-2.png",
-  "dice-3.png",
-  "dice-4.png",
-  "dice-5.png",
-  "dice-6.png",
+  "./diceImages/dice-1.png",
+  "./diceImages/dice-2.png",
+  "./diceImages/dice-3.png",
+  "./diceImages/dice-4.png",
+  "./diceImages/dice-5.png",
+  "./diceImages/dice-6.png",
 ];
 
 // Roll Dice Function
@@ -66,8 +65,6 @@ rollBtn.addEventListener("click", () => {
 saveBtn.addEventListener("click", () => {
   if (!gameActive) return;
 
-  // Play button click sound
-  buttonSound.play();
 
   if (currentPlayer === 1) {
     player1TotalScore += currentScore;
@@ -85,8 +82,6 @@ saveBtn.addEventListener("click", () => {
 
 // Reset Game Function
 resetBtn.addEventListener("click", () => {
-  // Play button click sound
-  buttonSound.play();
   resetGame();
 });
 
