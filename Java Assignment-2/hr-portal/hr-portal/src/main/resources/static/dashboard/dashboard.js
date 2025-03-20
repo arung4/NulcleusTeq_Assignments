@@ -46,7 +46,7 @@ async function deleteEmployee(employeeId){
     
     if(confirmDelete){
         try{
-            const response = await fetch(`http://localhost:8080/api/employees/${employeeId}}`,{
+            const response = await fetch(`http://localhost:8080/api/employees/${employeeId}`,{
                 method: 'DELETE',
             }); 
             if (response.ok) {

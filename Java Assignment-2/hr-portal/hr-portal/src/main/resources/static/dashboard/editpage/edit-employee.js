@@ -49,7 +49,7 @@ document.getElementById('editEmployeeForm').addEventListener('submit', async fun
 
     if (response.ok) {
       alert('Employee updated successfully!');
-      window.location.href = 'dashboard.html';
+      window.location.href = '../dashboard.html';
     } else {
       const errorText = await response.text();
       alert(`Error: ${errorText}`);

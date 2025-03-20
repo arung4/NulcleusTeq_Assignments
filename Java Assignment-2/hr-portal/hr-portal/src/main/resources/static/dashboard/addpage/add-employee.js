@@ -24,6 +24,7 @@ document.getElementById('addEmployeeForm').addEventListener('submit', function(e
     .then(data => {
       document.getElementById('message').innerText = 'Employee added successfully!';
       console.log('Employee added:', data);
+      window.location.href= '../dashboard.html';
       // Clear form fields
       document.getElementById('addEmployeeForm').reset();
     })
